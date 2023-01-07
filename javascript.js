@@ -13,7 +13,7 @@ createGrid = (val) => {
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', function(){
-    let val = 16;
+    let val = document.getElementById('slider').value;
     let cell = grid.children;
     for (let i = 0; i < val*val; i++) {
         cell[i].style.backgroundColor = 'white';
