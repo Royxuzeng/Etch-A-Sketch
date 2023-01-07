@@ -36,4 +36,27 @@ function removeAllChildNodes(parent){
     }
 }
 
+const black = document.querySelector('#black');
+black.addEventListener('click', function(){
+    let val = document.getElementById('slider').value;
+    let cell = grid.children;
+    for (let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = 'black';
+        })
+    }
+});
+
+const color = document.querySelector('#color');
+color.addEventListener('input', function(){
+    let val = document.getElementById('slider').value;
+    let cell = grid.children;
+    let newColor = color.value;
+    for (let i = 0; i < val*val; i++) {
+        cell[i].addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = newColor;
+        })
+    }
+});
+
 createGrid(16);
